@@ -223,22 +223,22 @@
             // 
             // grpOrder
             // 
-            grpOrder.Controls.Add(btnrst);
-            grpOrder.Controls.Add(btnorder);
             grpOrder.Controls.Add(lbltotalcost);
             grpOrder.Controls.Add(lstOrder);
             grpOrder.Font = new Font("한컴 말랑말랑 Bold", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 129);
             grpOrder.ForeColor = Color.FromArgb(192, 0, 0);
             grpOrder.Location = new Point(669, 118);
             grpOrder.Name = "grpOrder";
-            grpOrder.Size = new Size(314, 393);
+            grpOrder.Size = new Size(314, 303);
             grpOrder.TabIndex = 3;
             grpOrder.TabStop = false;
             grpOrder.Text = "주문 내역";
             // 
             // btnrst
             // 
-            btnrst.Location = new Point(159, 305);
+            btnrst.Font = new Font("한컴 말랑말랑 Bold", 20.2499962F, FontStyle.Bold, GraphicsUnit.Point, 129);
+            btnrst.ForeColor = Color.FromArgb(192, 0, 0);
+            btnrst.Location = new Point(828, 439);
             btnrst.Name = "btnrst";
             btnrst.Size = new Size(139, 51);
             btnrst.TabIndex = 3;
@@ -248,7 +248,9 @@
             // 
             // btnorder
             // 
-            btnorder.Location = new Point(16, 305);
+            btnorder.Font = new Font("한컴 말랑말랑 Bold", 20.2499962F, FontStyle.Bold, GraphicsUnit.Point, 129);
+            btnorder.ForeColor = Color.FromArgb(0, 192, 0);
+            btnorder.Location = new Point(685, 439);
             btnorder.Name = "btnorder";
             btnorder.Size = new Size(136, 51);
             btnorder.TabIndex = 2;
@@ -282,7 +284,9 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1065, 589);
+            Controls.Add(btnrst);
             Controls.Add(grpOrder);
+            Controls.Add(btnorder);
             Controls.Add(gtpOption);
             Controls.Add(grpMenu);
             Controls.Add(lbllabname);

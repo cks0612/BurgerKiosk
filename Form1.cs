@@ -62,7 +62,7 @@ namespace BurgerKiosk
             if (!rdoHamBurger.Checked && !rdoBulgogiBurger.Checked && !rdoChickenBurger.Checked)
             {
                 lbltotalcost.ForeColor = Color.Red;
-                lbltotalcost.Text = "햄버거를 선택해주세요.";
+                lbltotalcost.Text = "메뉴를 선택해주세요.";
                 return;
             }
 
