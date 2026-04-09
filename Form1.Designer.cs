@@ -247,6 +247,7 @@
             btnrst.Text = "초기화";
             btnrst.UseVisualStyleBackColor = true;
             btnrst.Click += btnrst_Click;
+            btnrst.KeyDown += btnrst_KeyDown;
             // 
             // lbltotalcost
             // 
@@ -281,6 +282,7 @@
             btnorder.Text = "주문하기";
             btnorder.UseVisualStyleBackColor = true;
             btnorder.Click += btnorder_Click;
+            btnorder.KeyDown += btnorder_KeyDown;
             // 
             // appname
             // 

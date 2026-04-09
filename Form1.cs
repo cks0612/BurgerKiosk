@@ -68,7 +68,7 @@ namespace BurgerKiosk
         {
             lbltotalcost.ForeColor = Color.FromArgb(0, 0, 192);
 
-            
+
             if (!rdoHamBurger.Checked && !rdoBulgogiBurger.Checked && !rdoChickenBurger.Checked)
             {
                 lbltotalcost.ForeColor = Color.Red;
@@ -83,7 +83,7 @@ namespace BurgerKiosk
         {
             lbltotalcost.ForeColor = Color.FromArgb(0, 0, 192);
 
-            
+
             rdoPotato.Checked = false;
             rdoCola.Checked = false;
             rdoCheese.Checked = false;
@@ -141,6 +141,33 @@ namespace BurgerKiosk
         private void lbltotalcost_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnorder_KeyDown(object sender, KeyEventArgs e)
+        {
+            lbltotalcost.ForeColor = Color.FromArgb(0, 0, 192);
+
+
+            if (!rdoHamBurger.Checked && !rdoBulgogiBurger.Checked && !rdoChickenBurger.Checked)
+            {
+                lbltotalcost.ForeColor = Color.Red;
+                lbltotalcost.Text = "메뉴를 선택해주세요.";
+                return;
+            }
+        }
+
+        private void btnrst_KeyDown(object sender, KeyEventArgs e)
+        {
+            lbltotalcost.ForeColor = Color.FromArgb(0, 0, 192);
+
+
+            rdoPotato.Checked = false;
+            rdoCola.Checked = false;
+            rdoCheese.Checked = false;
+            rdoSauce.Checked = false;
+            lstOrder.Items.Clear();
+            lbltotalcost.Text = "총 금액 : ";
+            totalCost = 0;
         }
     }
 }
