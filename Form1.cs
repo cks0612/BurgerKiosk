@@ -137,9 +137,7 @@ namespace BurgerKiosk
 
         private void name_Load(object sender, EventArgs e)
         {
-            rdoBulgogiBurger.Checked = false;
-            rdoChickenBurger.Checked = false;
-            rdoHamBurger.Checked = false;
+            
         }
 
         private void name_Shown(object sender, EventArgs e)

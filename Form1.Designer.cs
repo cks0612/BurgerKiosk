@@ -288,7 +288,6 @@
             Controls.Add(lbllabname);
             Name = "name";
             Text = "Burger Kiosk v1";
-            Load += name_Load;
             Shown += name_Shown;
             grpMenu.ResumeLayout(false);
             grpMenu.PerformLayout();
