@@ -1,6 +1,6 @@
 ﻿namespace BurgerKiosk
 {
-    partial class name
+    partial class appname
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(name));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(appname));
             lbllabname = new Label();
             grpMenu = new GroupBox();
             ckbgpxbx = new PictureBox();
@@ -44,9 +44,9 @@
             rdoPotato = new CheckBox();
             grpOrder = new GroupBox();
             btnrst = new Button();
-            btnorder = new Button();
             lbltotalcost = new Label();
             lstOrder = new ListBox();
+            btnorder = new Button();
             grpMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)ckbgpxbx).BeginInit();
             ((System.ComponentModel.ISupportInitialize)bbgpxbx).BeginInit();
@@ -117,7 +117,7 @@
             rdoChickenBurger.AutoSize = true;
             rdoChickenBurger.Font = new Font("한컴 말랑말랑 Bold", 18F, FontStyle.Bold, GraphicsUnit.Point, 129);
             rdoChickenBurger.ForeColor = Color.Purple;
-            rdoChickenBurger.Location = new Point(6, 321);
+            rdoChickenBurger.Location = new Point(21, 321);
             rdoChickenBurger.Name = "rdoChickenBurger";
             rdoChickenBurger.Size = new Size(119, 35);
             rdoChickenBurger.TabIndex = 2;
@@ -131,7 +131,7 @@
             rdoBulgogiBurger.AutoSize = true;
             rdoBulgogiBurger.Font = new Font("한컴 말랑말랑 Bold", 18F, FontStyle.Bold, GraphicsUnit.Point, 129);
             rdoBulgogiBurger.ForeColor = Color.Purple;
-            rdoBulgogiBurger.Location = new Point(6, 188);
+            rdoBulgogiBurger.Location = new Point(21, 188);
             rdoBulgogiBurger.Name = "rdoBulgogiBurger";
             rdoBulgogiBurger.Size = new Size(137, 35);
             rdoBulgogiBurger.TabIndex = 1;
@@ -145,7 +145,7 @@
             rdoHamBurger.AutoSize = true;
             rdoHamBurger.Font = new Font("한컴 말랑말랑 Bold", 18F, FontStyle.Bold, GraphicsUnit.Point, 129);
             rdoHamBurger.ForeColor = Color.Purple;
-            rdoHamBurger.Location = new Point(6, 55);
+            rdoHamBurger.Location = new Point(21, 53);
             rdoHamBurger.Name = "rdoHamBurger";
             rdoHamBurger.Size = new Size(93, 35);
             rdoHamBurger.TabIndex = 0;
@@ -223,13 +223,15 @@
             // 
             // grpOrder
             // 
+            grpOrder.Controls.Add(btnrst);
             grpOrder.Controls.Add(lbltotalcost);
             grpOrder.Controls.Add(lstOrder);
+            grpOrder.Controls.Add(btnorder);
             grpOrder.Font = new Font("한컴 말랑말랑 Bold", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 129);
             grpOrder.ForeColor = Color.FromArgb(192, 0, 0);
             grpOrder.Location = new Point(669, 118);
             grpOrder.Name = "grpOrder";
-            grpOrder.Size = new Size(314, 303);
+            grpOrder.Size = new Size(314, 356);
             grpOrder.TabIndex = 3;
             grpOrder.TabStop = false;
             grpOrder.Text = "주문 내역";
@@ -238,25 +240,13 @@
             // 
             btnrst.Font = new Font("한컴 말랑말랑 Bold", 20.2499962F, FontStyle.Bold, GraphicsUnit.Point, 129);
             btnrst.ForeColor = Color.FromArgb(192, 0, 0);
-            btnrst.Location = new Point(828, 439);
+            btnrst.Location = new Point(159, 287);
             btnrst.Name = "btnrst";
             btnrst.Size = new Size(139, 51);
-            btnrst.TabIndex = 3;
+            btnrst.TabIndex = 5;
             btnrst.Text = "초기화";
             btnrst.UseVisualStyleBackColor = true;
             btnrst.Click += btnrst_Click;
-            // 
-            // btnorder
-            // 
-            btnorder.Font = new Font("한컴 말랑말랑 Bold", 20.2499962F, FontStyle.Bold, GraphicsUnit.Point, 129);
-            btnorder.ForeColor = Color.FromArgb(0, 192, 0);
-            btnorder.Location = new Point(685, 439);
-            btnorder.Name = "btnorder";
-            btnorder.Size = new Size(136, 51);
-            btnorder.TabIndex = 2;
-            btnorder.Text = "주문하기";
-            btnorder.UseVisualStyleBackColor = true;
-            btnorder.Click += btnorder_Click;
             // 
             // lbltotalcost
             // 
@@ -277,22 +267,32 @@
             lstOrder.Name = "lstOrder";
             lstOrder.Size = new Size(282, 166);
             lstOrder.TabIndex = 0;
+            lstOrder.TabStop = false;
             lstOrder.SelectedIndexChanged += lstOrder_SelectedIndexChanged;
             // 
-            // name
+            // btnorder
+            // 
+            btnorder.Font = new Font("한컴 말랑말랑 Bold", 20.2499962F, FontStyle.Bold, GraphicsUnit.Point, 129);
+            btnorder.ForeColor = Color.FromArgb(0, 192, 0);
+            btnorder.Location = new Point(16, 287);
+            btnorder.Name = "btnorder";
+            btnorder.Size = new Size(136, 51);
+            btnorder.TabIndex = 4;
+            btnorder.Text = "주문하기";
+            btnorder.UseVisualStyleBackColor = true;
+            btnorder.Click += btnorder_Click;
+            // 
+            // appname
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1065, 589);
-            Controls.Add(btnrst);
             Controls.Add(grpOrder);
-            Controls.Add(btnorder);
             Controls.Add(gtpOption);
             Controls.Add(grpMenu);
             Controls.Add(lbllabname);
-            Name = "name";
+            Name = "appname";
             Text = "Burger Kiosk v1";
-            Shown += name_Shown;
             grpMenu.ResumeLayout(false);
             grpMenu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)ckbgpxbx).EndInit();

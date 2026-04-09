@@ -2,9 +2,9 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace BurgerKiosk
 {
-    public partial class name : Form
+    public partial class appname : Form
     {
-        public name()
+        public appname()
         {
             InitializeComponent();
 
@@ -12,12 +12,10 @@ namespace BurgerKiosk
 
         int totalCost = 0;
 
-
-        private void btnorder_Click(object sender, EventArgs e)
+        private void UpdateTotalCost()
         {
-            lbltotalcost.ForeColor = Color.FromArgb(0, 0, 192);
-
-            totalCost.ToString();
+            totalCost = 0;
+            lstOrder.Items.Clear();
 
             if (rdoHamBurger.Checked)
             {
@@ -33,6 +31,12 @@ namespace BurgerKiosk
             {
                 totalCost += 3000;
                 lstOrder.Items.Add("치킨 버거 3,000원");
+            }
+            else
+            {
+                lbltotalcost.ForeColor = Color.Red;
+                lbltotalcost.Text = "메뉴를 선택해주세요.";
+                return;
             }
 
             if (rdoPotato.Checked)
@@ -56,9 +60,15 @@ namespace BurgerKiosk
                 lstOrder.Items.Add("소스 추가 500원");
             }
 
-
+            lbltotalcost.ForeColor = Color.FromArgb(0, 0, 192);
             lbltotalcost.Text = $"총 금액: {totalCost:N0}원";
+        }
 
+        private void btnorder_Click(object sender, EventArgs e)
+        {
+            lbltotalcost.ForeColor = Color.FromArgb(0, 0, 192);
+
+            
             if (!rdoHamBurger.Checked && !rdoBulgogiBurger.Checked && !rdoChickenBurger.Checked)
             {
                 lbltotalcost.ForeColor = Color.Red;
@@ -73,9 +83,7 @@ namespace BurgerKiosk
         {
             lbltotalcost.ForeColor = Color.FromArgb(0, 0, 192);
 
-            rdoHamBurger.Checked = false;
-            rdoBulgogiBurger.Checked = false;
-            rdoChickenBurger.Checked = false;
+            
             rdoPotato.Checked = false;
             rdoCola.Checked = false;
             rdoCheese.Checked = false;
@@ -87,64 +95,52 @@ namespace BurgerKiosk
 
         private void rdoBulgogiBurger_CheckedChanged(object sender, EventArgs e)
         {
-            this.ActiveControl = null;
+            UpdateTotalCost();
         }
 
         private void rdoChickenBurger_CheckedChanged(object sender, EventArgs e)
         {
-            this.ActiveControl = null;
+            UpdateTotalCost();
         }
 
         private void rdoPotato_CheckedChanged(object sender, EventArgs e)
         {
-
+            UpdateTotalCost();
         }
 
         private void rdoCola_CheckedChanged(object sender, EventArgs e)
         {
-
+            UpdateTotalCost();
         }
 
         private void rdoCheese_CheckedChanged(object sender, EventArgs e)
         {
-
+            UpdateTotalCost();
         }
 
         private void rdoSauce_CheckedChanged(object sender, EventArgs e)
         {
-
+            UpdateTotalCost();
         }
 
         private void lstOrder_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            UpdateTotalCost();
         }
 
         private void totalcost_Click(object sender, EventArgs e)
         {
-
+            UpdateTotalCost();
         }
 
         private void rdoHamBurger_CheckedChanged(object sender, EventArgs e)
         {
-            this.ActiveControl = null;
+            UpdateTotalCost();
         }
 
         private void lbltotalcost_Click(object sender, EventArgs e)
         {
 
-        }
-
-        private void name_Load(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void name_Shown(object sender, EventArgs e)
-        {
-            rdoBulgogiBurger.Checked = false;
-            rdoChickenBurger.Checked = false;
-            rdoHamBurger.Checked = false;
         }
     }
 }
